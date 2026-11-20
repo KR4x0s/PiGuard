@@ -1,0 +1,15 @@
+[Unit]
+Description=PiGuard persistent gateway traffic guard
+DefaultDependencies=no
+After=local-fs.target
+Before=network-pre.target NetworkManager.service systemd-networkd.service networking.service
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/piguard-gateway/gateway.py boot-guard
+RemainAfterExit=yes
+# Deliberately no ExecStop: a Tor/service failure must not remove the firewall.
+
+[Install]
+WantedBy=sysinit.target

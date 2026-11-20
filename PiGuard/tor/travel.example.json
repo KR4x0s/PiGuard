@@ -1,0 +1,6 @@
+{
+  "profile": "travel",
+  "uplink": "wlan0",
+  "downlink": "eth0",
+  "gateway": "10.78.0.1/24"
+}

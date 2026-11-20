@@ -1,0 +1,22 @@
+# Full DNS record support for Pi-hole, transported over the local Tor SOCKS port.
+server_names = ['cloudflare-tor']
+listen_addresses = ['127.0.0.1:9053']
+max_clients = 64
+ipv4_servers = true
+ipv6_servers = false
+dnscrypt_servers = false
+doh_servers = true
+force_tcp = true
+http3 = false
+proxy = 'socks5://piguard-dns:piguard-dns@127.0.0.1:9060'
+timeout = 10000
+bootstrap_resolvers = []
+ignore_system_dns = true
+netprobe_timeout = 0
+cache = false
+log_level = 2
+
+[static.'cloudflare-tor']
+# Pinned address + TLS hostname: no direct bootstrap lookup or remote lists.
+# Source: DNSCrypt/dnscrypt-resolvers v3/public-resolvers.md, 2026-10-25.
+stamp = 'sdns://AgcAAAAAAAAABzEuMC4wLjEAEmRucy5jbG91ZGZsYXJlLmNvbQovZG5zLXF1ZXJ5'

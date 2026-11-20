@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PiGuard · Network command center</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="shell">
+<aside class="sidebar"><a class="brand" href="{{ url_for('overview') }}"><span class="mark">P</span><span>PiGuard<small>NETWORK COMMAND CENTER</small></span></a>
+{% if g.user %}<nav aria-label="Main navigation">
+<a class="navlink {{ 'active' if request.endpoint=='overview' }}" href="{{ url_for('overview') }}">◫ <span>Overview</span></a>
+<a class="navlink {{ 'active' if request.endpoint in ['index','detail','export'] }}" href="{{ url_for('index') }}">◎ <span>ML detection</span></a>
+<a class="navlink {{ 'active' if request.endpoint in ['gateway_page','gateway_action'] }}" href="{{ url_for('gateway_page') }}">◈ <span>Gateway &amp; Tor</span></a>
+{% if g.user.role=='admin' %}<a class="navlink" href="/pihole/admin/">▦ <span>Pi-hole admin</span></a>{% endif %}
+<a class="navlink {{ 'active' if request.endpoint=='setup' }}" href="{{ url_for('setup') }}">◇ <span>Setup guide</span></a>
+</nav><div class="sidebottom"><p class="muted">Private PiGuard interface</p><p>{{ g.user.username }} <span class="badge">{{ g.user.role }}</span></p><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button class="quiet" type="submit">Sign out →</button></form></div>{% endif %}</aside>
+<div class="workspace"><header class="topbar"><span>PI-HOLE <span class="topsep">/</span> ML DETECTION <span class="topsep">/</span> TOR GATEWAY</span><span class="topstatus">● PRIVATE NETWORK</span></header><main>{% block content %}{% endblock %}</main><footer>PiGuard · DGA scores are review signals, not proof of infection. Times shown in UTC.</footer></div></div></body></html>

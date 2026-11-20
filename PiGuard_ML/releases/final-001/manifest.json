@@ -1,0 +1,22 @@
+{
+  "format": 1,
+  "files": {
+    "benchmark-pi-batch500.json": "d5167079a41d09f708a2a2800dd92e4fe9dd3deaf5f82e149e1bdce50f5f2d21",
+    "data/public_suffix_list.dat": "0232f4df0831911356e8ee1f4d5c3b6b12c0ed3f6bd66b0f81c8ab5d3d49e9ca",
+    "data_audit.json": "eedf4994214ad16d3688bc203b5d19de78253196cd370a094a7b3414b39b2569",
+    "evaluation.png": "edf50fc9831430e0a95fd7e79534d554e86a55b97e9d1f985fd5af0968225089",
+    "evaluation_policy.json": "123031c5646b36fa6f9fd189bd53696fd824a8fe7e56b24605436b6ba5a6b4fe",
+    "evaluation_recipe.py": "1bba748e68526f419218a2b863fd4a18480002f6beb4114864211c67235305a7",
+    "feature_contract.json": "f0b0ce5f162dae4f9e4ab487014dd8285f36eb8070fb29754d120b3b78e7cb0e",
+    "metrics.json": "2a201541ce9a1995173e7069390f82d61578548ef3188e352488d9c7b5a198cd",
+    "piguard_dga_features.py": "a6898898a88633dbe38f84281bfa06fa0772b68c926ce8b4d2ac01502cc73671",
+    "piguard_dga_model.joblib": "d2de23db19692dfb706780cbeb43cfe9395efaadba71e3e38d037555e9ce7f31",
+    "requirements-pi.txt": "8ccef009ab3979b30cc8251a16f837e2674992228459f758230c1a09878ee300",
+    "split_manifest.json": "ba659839f94abc7ac67a04d405456b78891dbfb0d9fb6a9928a89f95beef92ef",
+    "test_errors.csv": "5263738af9a4a2478ee0f479c951f8e5ed8332c1b9e15553a49544d8e7b32cfc",
+    "test_vectors.json": "65c34d1db4c98b3582455429d3597d708165e6b5c2087b9376daf29228bb8707",
+    "training_recipe.py": "2fae7277cf20e6bb2e7bcea7a464ebeaba7c1a2e15798d5a65beb86a0c96fb92",
+    "training_recipe.sha256": "1d042196e6b83d2fdeb9aa8f900c334f40af8852a065b03c16e01eff66610b4e",
+    "validation.json": "bf3941b142a2d517be194aa70ad13665bddab14297d28c98c189453ca6fbbb14"
+  }
+}

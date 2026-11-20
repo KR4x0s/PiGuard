@@ -1,0 +1,13 @@
+[Unit]
+Description=Resume the explicitly selected PiGuard gateway mode
+Requires=piguard-gateway-guard.service pihole-FTL.service
+After=piguard-gateway-guard.service network-online.target pihole-FTL.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/piguard-gateway/gateway.py resume
+TimeoutStartSec=180
+
+[Install]
+WantedBy=multi-user.target

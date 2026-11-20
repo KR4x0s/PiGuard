@@ -1,0 +1,30 @@
+[Unit]
+Description=PiGuard alert-only DNS observer
+After=network.target pihole-FTL.service piguard-source-access.service
+Wants=piguard-source-access.service
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=piguard
+Group=piguard
+WorkingDirectory=/opt/piguard/current
+ExecStart=/opt/piguard/current/.venv/bin/python -m piguard.observer --config /opt/piguard/current/deploy/active.json
+Restart=on-failure
+RestartSec=15
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/piguard
+ReadOnlyPaths=/etc/pihole
+CPUQuota=100%
+MemoryMax=320M
+Environment=OPENBLAS_NUM_THREADS=1
+Environment=OMP_NUM_THREADS=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+[Install]
+WantedBy=multi-user.target

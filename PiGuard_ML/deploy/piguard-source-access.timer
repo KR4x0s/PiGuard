@@ -1,0 +1,17 @@
+[Unit]
+Description=Refresh PiGuard query database read access
+
+[Timer]
+OnBootSec=15
+# Pi-hole can recreate SQLite WAL/SHM files after its initial start. Refresh
+# their narrow read ACLs during early boot without watching every directory
+# change or running the helper more often for the rest of the day.
+OnBootSec=45
+OnBootSec=65
+OnBootSec=95
+OnUnitActiveSec=60
+AccuracySec=1s
+Unit=piguard-source-access.service
+
+[Install]
+WantedBy=timers.target

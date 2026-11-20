@@ -1,0 +1,9 @@
+.venv*/
+.python/
+__pycache__/
+.pytest_cache/
+*.pyc
+runs/
+state/
+*.sqlite*
+data/domains_features.gz

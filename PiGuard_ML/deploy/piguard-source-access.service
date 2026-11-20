@@ -1,0 +1,9 @@
+[Unit]
+Description=Grant PiGuard read-only access to the Pi-hole query database files
+After=pihole-FTL.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/piguard-source-access
+NoNewPrivileges=true
+ProtectHome=true

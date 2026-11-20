@@ -1,0 +1,9 @@
+[Unit]
+Description=Refresh PiGuard read ACLs after Pi-hole database file changes
+
+[Path]
+PathChanged=/etc/pihole
+Unit=piguard-source-access.service
+
+[Install]
+WantedBy=multi-user.target

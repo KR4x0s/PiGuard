@@ -1,0 +1,30 @@
+{
+  "logistic_regression": {
+    "platform": "aarch64",
+    "python": "3.13.5",
+    "manifest_sha256": "6b1c8cee2223e71fd77a2c9f58f2b89c636b617c4438815ea9b101d9719a51ad",
+    "reference_vectors": "passed",
+    "model_id": "logistic_regression-f6b70c8628ea",
+    "peak_rss_mib": 155.6640625,
+    "batch_size": 500,
+    "batch_p95_ms": 1478.5449249998237,
+    "load_seconds": 15.747995416999856,
+    "uncached_batches": 20,
+    "cpu_one_core_percent": 105.27081671492017,
+    "captured_at": 1792935482.4725194
+  },
+  "compact_random_forest": {
+    "platform": "aarch64",
+    "python": "3.13.5",
+    "manifest_sha256": "6ebcc1e988478b8e843531b73a61b2b3a0bbc35581be4e8f1ef887ff1f9bb58b",
+    "reference_vectors": "passed",
+    "model_id": "compact_random_forest-d2de23db1969",
+    "peak_rss_mib": 178.40234375,
+    "batch_size": 500,
+    "batch_p95_ms": 1205.5712970000059,
+    "load_seconds": 16.056286913999884,
+    "uncached_batches": 20,
+    "cpu_one_core_percent": 105.35021133857849,
+    "captured_at": 1792935523.2700367
+  }
+}

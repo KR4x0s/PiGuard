@@ -1,0 +1,27 @@
+[Unit]
+Description=PiGuard private review dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=piguard
+Group=piguard
+WorkingDirectory=/opt/piguard/current
+ExecStart=/opt/piguard/current/.venv/bin/python -m piguard.dashboard --config /opt/piguard/current/deploy/active.json --secret-file /var/lib/piguard/web-secret
+Restart=on-failure
+RestartSec=15
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/piguard
+InaccessiblePaths=/etc/pihole
+CPUQuota=50%
+MemoryMax=160M
+Environment=OPENBLAS_NUM_THREADS=1
+Environment=OMP_NUM_THREADS=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+{
+  "source_url": "https://raw.githubusercontent.com/tisage/DGA-dataset/b9c75bc92d16736875f094b05180befb163d756a/domains_features.gz",
+  "source_revision": "b9c75bc92d16736875f094b05180befb163d756a",
+  "sha256": "acba69ed939da1f13604dab21f15a59e162c379af374fe44176df3f5be468b7a",
+  "audit": {
+    "raw_rows": 91599,
+    "invalid_rows": 0,
+    "conflicting_groups": 1,
+    "conflicting_rows": 2,
+    "duplicates_removed": 377,
+    "clean_rows": 91220,
+    "class_counts": {
+      "1": 49145,
+      "0": 42075
+    }
+  },
+  "input_file": "domains_features.gz"
+}

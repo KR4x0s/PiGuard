@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+# Never add the observer to the pihole group: it must not read admin credentials.
+for source in /etc/pihole/pihole-FTL.db /etc/pihole/pihole-FTL.db-wal /etc/pihole/pihole-FTL.db-shm; do
+    if [ -f "$source" ] && [ ! -L "$source" ]; then
+        if ! getfacl -cp "$source" | grep -q '^user:piguard:r--$'; then
+            setfacl -m u:piguard:r-- "$source"
+        fi
+    fi
+done

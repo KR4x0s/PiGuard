@@ -1,0 +1,21 @@
+[Unit]
+Description=PiGuard DNS over HTTPS through Tor
+Requires=piguard-gateway-guard.service
+After=piguard-gateway-guard.service network.target piguard-tor.service
+
+[Service]
+Type=simple
+User=piguard-tor-dns
+Group=piguard-tor-dns
+ExecStart=/usr/sbin/dnscrypt-proxy -config /etc/piguard-tor/dnscrypt-proxy.toml
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+MemoryMax=96M
+CPUQuota=25%

@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<div class="loginwrap"><div class="panel padded loginpanel"><p class="eyebrow">PRIVATE ACCESS</p><h1>Welcome to PiGuard.</h1><p class="muted">Sign in to view your protected network and detection activity.</p>{% if error %}<div class="notice error" role="alert">{{ error }}</div>{% endif %}
+<form method="post"><input type="hidden" name="csrf" value="{{ session.csrf }}"><label>Username<input name="username" autocomplete="username" required autofocus></label><label>Password<input name="password" type="password" autocomplete="current-password" required></label><button type="submit">Sign in →</button></form></div></div>
+{% endblock %}

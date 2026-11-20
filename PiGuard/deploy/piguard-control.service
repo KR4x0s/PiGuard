@@ -1,0 +1,18 @@
+[Unit]
+Description=PiGuard fixed gateway control broker
+After=piguard-gateway-guard.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/python3 /usr/local/lib/piguard-control/control_broker.py
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

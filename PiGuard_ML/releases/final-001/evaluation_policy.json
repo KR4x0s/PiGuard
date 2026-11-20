@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-10-25T13:36:27.752134+00:00",
+  "status": "locked_before_test_evaluation",
+  "rationale": "Pi-hole persists in roughly 60 seconds and observer polls every 15 seconds. The collector has a 2-second drain budget for each 500-record batch; a 100 ms/100-domain criterion was not tied to this workload. Use the directly measured 500-name batch.",
+  "selection_order": [
+    "highest_validation_recall",
+    "highest_validation_precision",
+    "lowest_pi_scorer_memory"
+  ],
+  "requirements": {
+    "platform": "aarch64",
+    "reference_vectors": "passed",
+    "max_scorer_peak_rss_mib": 256,
+    "batch_size": 500,
+    "max_batch_p95_ms": 2000
+  },
+  "power_status": "ignored_for_selection_per_user_instruction",
+  "benchmark_evidence": "benchmark-pi-batch500.json",
+  "limitations": [
+    "No family-labelled dataset; test assesses held-out labels from same source.",
+    "Full Pi-hole observer and dashboard DNS overhead still need a controlled comparison.",
+    "Home-network alert burden needs a separate observation period."
+  ]
+}
